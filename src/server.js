@@ -7,6 +7,7 @@ import authRoutes from './api/routes/auth.routes.js';
 import workspaceRoutes from './api/routes/workspace.routes.js';
 import taskRoutes from './api/routes/task.routes.js';
 import logRoutes from './api/routes/log.routes.js';
+import userRoutes from './api/routes/user.routes.js';
 import ApiError from './utils/apiError.js';
 
 dotenv.config();
@@ -20,6 +21,7 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/workspaces', workspaceRoutes);
 app.use('/api/v1/tasks', taskRoutes);
 app.use('/api/v1/logs', logRoutes);
+app.use('/api/v1/users', userRoutes);
 
 app.use((req, _res, next) => {
   next(new ApiError(404, 'Ruta solicitată nu există.'));
